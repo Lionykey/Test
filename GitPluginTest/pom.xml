@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>GitPluginTest</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <!--获取Git版本信息的插件-->
+<build>
+    <finalName>git-plug</finalName>
+    <plugins>
+        <!--获取Git版本信息的插件-->
+        <plugin>
+            <groupId>pl.project13.maven</groupId>
+            <artifactId>git-commit-id-plugin</artifactId>
+            <version>3.0.1</version>
+            <configuration>
+                <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                <includeOnlyProperties>
+                    <includeOnlyProperty>^git.branch$</includeOnlyProperty>
+                    <includeOnlyProperty>^git.commit.id$</includeOnlyProperty>
+                    <includeOnlyProperty>^git.dirty$</includeOnlyProperty>
+                    <includeOnlyProperty>^git.build.time$</includeOnlyProperty>
+                    <includeOnlyProperty>^git.user.name$</includeOnlyProperty>
+                    <includeOnlyProperty>^git.user.email$</includeOnlyProperty>
+                </includeOnlyProperties>
+            </configuration>
+        </plugin>
+
+    </plugins>
+</build>
+
+
+</project>
+
